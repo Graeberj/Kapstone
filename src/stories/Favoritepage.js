@@ -5,11 +5,11 @@ import { Favoriteheader } from './Favoriteheader';
 import './Favoritepage.css';
 
 export const Favoritepage = () => (
-	<div class="container">
-		<div class="row align-items-start">
-			<div class="col">
+	<div className="container">
+		<div className="row align-items-start">
+			<div className="col">
 				<div className="display-1">Movies 🎞️</div>
-				<table class="table">
+				<table className="table">
 					<thead>
 						<tr>
 							<th scope="col">Movie title</th>
@@ -36,9 +36,9 @@ export const Favoritepage = () => (
 					</tbody>
 				</table>
 			</div>
-			<div class="col">
+			<div className="col">
 				<div className="display-1">TV 📺</div>
-				<table class="table">
+				<table className="table">
 					<thead>
 						<tr>
             <th scope="col">TV title</th>
