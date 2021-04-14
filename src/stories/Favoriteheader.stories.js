@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { Header } from './Header';
+import { Favoriteheader } from './Favoriteheader';
 
 export default {
-  title: 'Laura/Header',
-  component: Header,
+  title: 'Laura/Favoriteheader',
+  component: Favoriteheader,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = (args) => <Favoriteheader {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
-  user: {},
+  
 };
 
 export const LoggedOut = Template.bind({});
