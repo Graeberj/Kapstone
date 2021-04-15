@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { POSTMESSAGES, useStore } from './store/store';
 import { postMessageRev } from '../request';
+import { Form, Button } from 'react-bootstrap';
 
 function Review() {
 	const dispatch = useStore((state) => state.dispatch);
@@ -16,7 +17,7 @@ function Review() {
 		postMessageRev(post);
 	}
 
-	const keyhandler = (e) => {
+	const keyHandler = (e) => {
 		if (e.keyCode === 13) {
 			handlePost(post);
 			setPost('');
@@ -34,8 +35,22 @@ function Review() {
 
 	return (
 		<div>
-			<div classsName='message'>Message</div>
-			<textarea className='text' rows='5' cols='20'></textarea>
+			<Form>
+				<label>
+					<p>Your Review</p>
+
+					<textarea
+						classsName='message'
+						rows='10'
+						cols='30'
+						type='text'
+						autoFocus
+						onChange={(e) => setPost(e.target.value)}
+						value={post}
+					/>
+				</label>
+				<Button variant='outline-primary'>Rate it!</Button>{' '}
+			</Form>
 		</div>
 	);
 }
