@@ -1,13 +1,9 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Button } from './ThumbsUpbutton';
 
 export default {
-<<<<<<< HEAD
-  title: 'Example/Button',
-=======
-  title: 'Laura/Button',
->>>>>>> main
+  title: 'Laura/ThumbsUpbutton',
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -19,22 +15,22 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  label: 'Button',
+  label: 'See it!',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  label: 'See it!',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',
-  label: 'Button',
+  label: 'See it!',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
-  label: 'Button',
+  label: 'See it!',
 };
