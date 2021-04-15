@@ -3,7 +3,11 @@ import React from 'react';
 import { Button } from './Button';
 
 export default {
+<<<<<<< HEAD
+  title: 'Example/Button',
+=======
   title: 'Laura/Button',
+>>>>>>> main
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },
