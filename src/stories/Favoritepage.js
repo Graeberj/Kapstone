@@ -8,8 +8,8 @@ export const Favoritepage = () => (
 	<div className="container">
 		<div className="row align-items-start">
 			<div className="col">
-				<div className="display-1">Movies 🎞️</div>
-				<table className="table">
+				<div className="display-1 text-primary">Movies 🎞️</div>
+				<table className="table text-primary">
 					<thead>
 						<tr>
 							<th scope="col">Movie title</th>
@@ -37,11 +37,11 @@ export const Favoritepage = () => (
 				</table>
 			</div>
 			<div className="col">
-				<div className="display-1">TV 📺</div>
-				<table className="table">
+				<div className="display-1 text-primary">TV 📺</div>
+				<table className="table text-primary">
 					<thead>
 						<tr>
-            <th scope="col">TV title</th>
+            <th scope="col text-primary">TV title</th>
 							<th scope="col">Thumbs down</th>
 							<th scope="col">Thumbs up</th>
 						</tr>
