@@ -9,7 +9,9 @@ import film from './assets/filmstrip.png'
 
 
 
+
 export const Favoriteheader = () => (
+  <div className="sb-show-main sb-main-padded">
   <div className = "container">
   <div className="input-group input-group-sm mb-3">
   <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"/>
@@ -21,6 +23,7 @@ export const Favoriteheader = () => (
             <img className ="FilmImage" src={film} class="rounded float-start" alt="Film"/>
           </div>
           </div>
+           </div>
   
        );
        

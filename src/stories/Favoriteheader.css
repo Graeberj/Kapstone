@@ -13,7 +13,7 @@
   border-radius: 4px;
   padding: 5px;
   width: 150px;
-
+  
 }
 
 h1 {
@@ -26,3 +26,7 @@ h1 {
 }
 
 
+.sb-show-main {
+  background-color: rgb(195, 161, 219);
+
+}
