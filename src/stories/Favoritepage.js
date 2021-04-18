@@ -13,25 +13,19 @@ export const Favoritepage = () => (
 					<thead>
 						<tr>
 							<th scope="col">Movie title</th>
-							<th scope="col">Thumbs down</th>
-							<th scope="col">Thumbs up</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<th scope="row">movie title</th>
-							<td>thumbs</td>
-							<td>thumbs</td>
 						</tr>
 						<tr>
 							<th scope="row">movie title</th>
-							<td>thumbs</td>
-							<td>thumbs</td>
 						</tr>
 						<tr>
 							<th scope="row">movie title</th>
-							<td>thumbs</td>
-              <td>thumbs</td>
+							
+              
 						</tr>
 					</tbody>
 				</table>
@@ -42,25 +36,23 @@ export const Favoritepage = () => (
 					<thead>
 						<tr>
             <th scope="col text-primary">TV title</th>
-							<th scope="col">Thumbs down</th>
-							<th scope="col">Thumbs up</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
               <th scope="row">TV title</th>
-							<td>thumbs</td>
-							<td>thumbs</td>
+							
+							
 						</tr>
 						<tr>
               <th scope="row">TV title</th>
-							<td>thumbs</td>
-							<td>thumbs</td>
+							
+							
 						</tr>
 						<tr>
               <th scope="row">TV title</th>
-							<td>thumbs</td>
-              <td>thumbs</td>
+							
+              
 						</tr>
 					</tbody>
 				</table>
