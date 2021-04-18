@@ -19,7 +19,6 @@ export const Favoriteheader = () => (
 					Search Movies or TV
 				</span>
 			</div>
-
 			<div className="wrapper justify-content-center">
 				<div className="text-primary display-3">
 					<div>I want to WATCH...</div>
