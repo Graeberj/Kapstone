@@ -7,8 +7,9 @@ import axios from "../axios";
 
 import ImageCard from "./ImageCard";
 import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
+import MovieDetail from "./MovieDetail";
 
-function Movie({ movieOption }) {
+function Movie({ movieOption }, props) {
   const [image, setImage] = useState([]);
 
   useEffect(() => {
@@ -24,9 +25,12 @@ function Movie({ movieOption }) {
   return (
     <div className="movie">
       <BreadcrumbHeader />
-      {image.map((image) => (
-        <ImageCard key={image.id} image={image} />
-      ))}
+      {image &&
+        image.map((image) => (
+          <Link to={"movie/" + image.id}>
+            <ImageCard key={image.id} image={image} />
+          </Link>
+        ))}
     </div>
   );
 }

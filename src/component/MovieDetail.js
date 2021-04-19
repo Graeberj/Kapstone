@@ -11,7 +11,7 @@ function MovieDetail(props) {
         {}
     );
   });
-
+  console.log(movie.id);
   return (
     <div>
       <h3>{movie.name}</h3>

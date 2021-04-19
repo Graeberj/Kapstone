@@ -13,13 +13,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Route exact path='/movie' component={Movie} /> */}
+
       <Switch>
         <Route path="/favorite" component={Favorite} />
         <Route path="/review" component={Review} />
         <Route path="/movie" component={Movie} />
         <Movie movieOption={movieOption} />
-        <Route exact path="/movie/:movieId" component={MovieDetail} />
+        <Route path="/movie/:movieId" component={<MovieDetail />} />
       </Switch>
     </div>
   );
