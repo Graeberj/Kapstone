@@ -1,25 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
-<<<<<<< HEAD
-
-=======
->>>>>>> main
+import React from "react";
+import PropTypes from "prop-types";
+import "./button.css";
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary
+    ? "storybook-button--primary"
+    : "storybook-button--secondary";
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-<<<<<<< HEAD
+      className={["storybook-button", `storybook-button--${size}`, mode].join(
+        " "
+      )}
       style={backgroundColor && { backgroundColor }}
-=======
-      style={backgroundColor && { backgroundColor }
-    }
->>>>>>> main
       {...props}
     >
       {label}
@@ -27,10 +22,6 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   );
 };
 
-<<<<<<< HEAD
-=======
-//this is boiler code given by Storybook: I left it here for reference.
->>>>>>> main
 Button.propTypes = {
   /**
    * Is this the principal call to action on the page?
@@ -43,7 +34,7 @@ Button.propTypes = {
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
    * Button contents
    */
@@ -57,6 +48,6 @@ Button.propTypes = {
 Button.defaultProps = {
   backgroundColor: null,
   primary: false,
-  size: 'medium',
+  size: "medium",
   onClick: undefined,
 };
