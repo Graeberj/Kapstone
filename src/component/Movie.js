@@ -5,6 +5,7 @@ import request from '../request';
 import axios from '../axios';
 
 import ImageCard from './ImageCard';
+import BreadcrumbHeader from '../stories/BreadcrumbsHeader'
 
 function Movie({ movieOption }) {
 	const [image, setImage] = useState([]);
@@ -21,6 +22,7 @@ function Movie({ movieOption }) {
 
 	return (
 		<div className='movie'>
+			<BreadcrumbHeader/> 
 			{image.map((image) => (
 				<ImageCard key={image.id} image={image} />
 			))}

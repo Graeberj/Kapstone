@@ -1,7 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-//import { Button } from './Button';
+import { Button } from './Button';
 import './Favoriteheader.css';
 import film from './assets/filmstrip.png';
 
@@ -28,3 +28,4 @@ export const Favoriteheader = () => (
 		</div>
 	</div>
 );
+ export default Favoriteheader;

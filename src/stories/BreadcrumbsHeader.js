@@ -1,23 +1,25 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-//import { Button } from './Button';
+import { Button } from './Button';
 import './BreadcrumbsHeader.css';
 
 export const BreadcrumbsHeader = () => (
+	
 	<div className="sb-show-main sb-main-padded">
 		<div className="container">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="#">Home</a>
+						<a href="/">Movies</a>
 					</li>
 					<li class="breadcrumb-item active" aria-current="page">
-						Library
+					<a href="/Favorites">Favorites</a>
+						
 					</li>
 				</ol>
 			</nav>
-			<div className="input-group input-group-sm mb-3">
+			<div className="input-group input-group-sm">
 				<input
 					type="text"
 					class="form-control"
@@ -31,3 +33,4 @@ export const BreadcrumbsHeader = () => (
 		</div>
 	</div>
 );
+export default BreadcrumbsHeader

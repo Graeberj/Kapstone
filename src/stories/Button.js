@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 /**
  * Primary UI component for user interaction
  */
@@ -14,12 +10,7 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-<<<<<<< HEAD
       style={backgroundColor && { backgroundColor }}
-=======
-      style={backgroundColor && { backgroundColor }
-    }
->>>>>>> main
       {...props}
     >
       {label}
@@ -27,10 +18,6 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   );
 };
 
-<<<<<<< HEAD
-=======
-//this is boiler code given by Storybook: I left it here for reference.
->>>>>>> main
 Button.propTypes = {
   /**
    * Is this the principal call to action on the page?
