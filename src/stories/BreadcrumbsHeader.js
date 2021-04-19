@@ -2,13 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from './Button';
-import './Favoriteheader.css';
-import film from './assets/filmstrip.png';
+import './BreadcrumbsHeader.css';
 
-export const Favoriteheader = () => (
+export const BreadcrumbsHeader = () => (
+	
 	<div className="sb-show-main sb-main-padded">
 		<div className="container">
-			<div className="input-group input-group-sm mb-3">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="/">Movies</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">
+					<a href="/Favorites">Favorites</a>
+						
+					</li>
+				</ol>
+			</nav>
+			<div className="input-group input-group-sm">
 				<input
 					type="text"
 					class="form-control"
@@ -19,13 +30,7 @@ export const Favoriteheader = () => (
 					Search Movies or TV
 				</span>
 			</div>
-			<div className="wrapper justify-content-center">
-				<div className="text-primary display-3">
-					<div>I want to WATCH...</div>
-					<img className="FilmImage" src={film} class="rounded float-start" alt="Film" />
-				</div>
-			</div>
 		</div>
 	</div>
 );
- export default Favoriteheader;
+export default BreadcrumbsHeader
