@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React from "react";
 import PropTypes from "prop-types";
 import "./button.css";
-=======
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
->>>>>>> ca282638ca16eb4cefb3b514bbf3e9ab6a086eae
 /**
  * Primary UI component for user interaction
  */
@@ -17,13 +11,9 @@ export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   return (
     <button
       type="button"
-<<<<<<< HEAD
       className={["storybook-button", `storybook-button--${size}`, mode].join(
         " "
       )}
-=======
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
->>>>>>> ca282638ca16eb4cefb3b514bbf3e9ab6a086eae
       style={backgroundColor && { backgroundColor }}
       {...props}
     >
