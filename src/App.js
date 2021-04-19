@@ -5,6 +5,7 @@ import Movie from "./component/Movie";
 import Review from "./component/Review";
 import request from "../src/request";
 import MovieDetail from "./component/MovieDetail";
+import Favorite from "./component/Favorite";
 
 function App() {
   const [movieOption, setMovieOption] = useState(request.fetchDiscovery);
@@ -17,9 +18,8 @@ function App() {
         </Route>
         <Route exact path="/review" component={Review} />
         <Route exact path="/movie/:movieId" component={MovieDetail} />
+        <Route exact path="/Favorite" component={Favorite} />
       </Switch>
     </div>
   );
 }
-
-export default App;
