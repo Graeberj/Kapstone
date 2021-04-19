@@ -1,11 +1,11 @@
 import create from 'zustand';
 import { devtools, redux, persist } from 'zustand/middleware';
 
-export const POSTMESSAGES = 'POSTMESSAGES';
+export const POSTREVIEW = 'POSTREVIEW';
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case POSTMESSAGES:
+		case POSTREVIEW:
 			return { messages: action.payload };
 		default:
 			return state;

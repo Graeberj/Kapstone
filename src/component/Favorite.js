@@ -1,11 +1,18 @@
-import React from "react";
-import { movieReq } from "../request";
-import { useState, useEffect } from "react";
+import React from 'react';
+
+import { useState, useEffect } from 'react';
+import { Favoriteheader } from '../stories/Favoriteheader';
+import { Favoritepage } from '../stories/Favoritepage';
 
 function Favorite() {
-  const [fave, setFave] = useState([]);
+	const [fave, setFave] = useState([]);
 
-  return <div>testing</div>;
+	return (
+		<div className='Favelist'>
+			<Favoriteheader />
+			<Favoritepage />
+		</div>
+	);
 }
 
 export default Favorite;

@@ -1,35 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { POSTMESSAGES, useStore } from './store/store';
-import { postMessageRev } from '../request';
+import { POSTREVIEW, useStore } from './store/store';
+import { reviewRequest, createMessageRev } from '../request';
 import { Form, Button } from 'react-bootstrap';
 
-function Review() {
+export default function Review() {
 	const dispatch = useStore((state) => state.dispatch);
 	const [post, setPost] = useState('');
+	const [newReview, setNewReview] = useState([]);
 
 	useEffect(() => {
-		postMessageRev().then((data) => {
-			dispatchEvent({ type: POSTMESSAGES, payload: data.message });
+		reviewRequest().then((data) => {
+			setNewReview(data.message);
 		});
-	}, [dispatch]);
+	}, []);
 
-	function handlePost(e) {
-		postMessageRev(post);
-	}
-
-	const keyHandler = (e) => {
-		if (e.keyCode === 13) {
-			handlePost(post);
-			setPost('');
-		}
+	const handleNewReview = (e) => {
+		e.preventDefault();
+		createMessageRev(post).then((data) => {
+			dispatch({ type: POSTREVIEW, PAYLOAD: data });
+			setNewReview([data.message, ...newReview]);
+		});
 	};
 
-	useEffect(() => {
-		window.addEventListener('keydown', keyHandler);
-		return () => {
-			window.removeEventListener('keydown', keyHandler);
-		};
-	});
+	const handleReview = (e) => {
+		setPost(e.target.value);
+	};
 
 	// need to add onchange with event pass down within textarea
 
@@ -45,14 +40,14 @@ function Review() {
 						cols='30'
 						type='text'
 						autoFocus
-						onChange={(e) => setPost(e.target.value)}
+						onChange={handleReview.username}
 						value={post}
 					/>
 				</label>
-				<Button variant='outline-primary'>Rate it!</Button>{' '}
+				<Button variant='outline-primary' onSubmit={handleNewReview}>
+					Rate it!
+				</Button>{' '}
 			</Form>
 		</div>
 	);
 }
-
-export default Review;

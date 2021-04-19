@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { HandThumbsDown, HandThumbsUp } from 'react-bootstrap-icons';
 
@@ -20,9 +21,10 @@ function ImageCard({ image }) {
 		<div className='imageCard'>
 			<img src={`${base_url}${image.backdrop_path || image.poster_path}`} alt='' />
 
-			{/* <TextTruncate line={1} element='p' truncateText='...' text={image.overview} /> */}
-
 			<h2>{image.title || image.original_name}</h2>
+			<Link>
+				<h3>Reviews</h3>
+			</Link>
 			<HandThumbsUp onClick={() => likes()} className='thumbsUp' />
 			<HandThumbsDown onClick={() => dislikes()} className='thumbsDown' />
 		</div>
