@@ -3,15 +3,18 @@ import React from "react";
 import { Button } from "./Button";
 
 export default {
-<<<<<<< HEAD
   title: "Laura/Button",
-=======
-  title: 'Example/Button',
->>>>>>> ca282638ca16eb4cefb3b514bbf3e9ab6a086eae
   component: Button,
   argTypes: {
     backgroundColor: { control: "color" },
   },
+
+  title: "Example/Button",
+  component: Button,
+  argTypes: {
+    backgroundColor: { control: "color" },
+  },
+  main,
 };
 
 const Template = (args) => <Button {...args} />;
