@@ -2,25 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { POSTREVIEW, useStore } from './store/store';
 import { reviewRequest, createMessageRev } from '../request';
 import { Form, Button } from 'react-bootstrap';
-import Favoriteheader from '../stories/Favoriteheader'
+import Favoriteheader from '../stories/Favoriteheader';
 import film from '../stories/assets/filmstrip.png';
 
-export default function Review() {
+function Review() {
 	const dispatch = useStore((state) => state.dispatch);
 	const [post, setPost] = useState('');
 	const [newReview, setNewReview] = useState([]);
 
 	useEffect(() => {
 		reviewRequest().then((data) => {
-			setNewReview(data.message);
+			setNewReview(data.review);
 		});
 	}, []);
+	console.log(newReview);
 
 	const handleNewReview = (e) => {
 		e.preventDefault();
 		createMessageRev(post).then((data) => {
 			dispatch({ type: POSTREVIEW, PAYLOAD: data });
-			setNewReview([data.message, ...newReview]);
+			setNewReview([data.username, ...newReview]);
 		});
 	};
 
@@ -28,43 +29,30 @@ export default function Review() {
 		setPost(e.target.value);
 	};
 
-	// need to add onchange with event pass down within textarea
-
 	return (
 		<div>
-			<div className="sb-show-main sb-main-padded">
-		<div className="container">
-			<div className="input-group input-group-sm mb-3">
-				<input
-					type="text"
-					class="form-control"
-					aria-label="Sizing example input"
-					aria-describedby="inputGroup-sizing-sm"
-				/>
-				<span className="input-group-text  text-primary" id="inputGroup-sizing-sm">
-					Search Movies or TV
-				</span>
-			</div>
-			<div className="wrapper justify-content-center">
-				<div className="text-primary display-3">
-					<div>I want to WATCH...</div>
-					<img className="FilmImage" src={film} class="rounded float-start" alt="Film" />
-				</div>
-			</div>
-		</div>
-	</div>
-			<Favoriteheader/>
+			<Favoriteheader />
 			<Form>
-				<label>
+				<label className='review-form'>
 					<p>Your Review</p>
 
 					<textarea
-						classsName='message'
+						classsName='username'
+						rows='1'
+						cols='30'
+						type='text'
+						autoFocus
+						onChange={handleReview}
+						value={post}
+					/>
+					<textarea classsName='title' rows='1' cols='30' type='text' autoFocus onChange={handleReview} value={post} />
+					<textarea
+						classsName='review'
 						rows='10'
 						cols='30'
 						type='text'
 						autoFocus
-						onChange={handleReview.username}
+						onChange={handleReview}
 						value={post}
 					/>
 				</label>
@@ -75,3 +63,5 @@ export default function Review() {
 		</div>
 	);
 }
+
+export default Review;

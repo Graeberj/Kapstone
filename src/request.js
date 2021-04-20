@@ -9,14 +9,16 @@ export default {
 
 // need backend URL to add to fech request
 
-export const createMessageRev = (message) => {
+export const createMessageRev = (username, title, review) => {
 	return fetch({
-		method: 'POST',
+		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			// Text: message,
+			username: username,
+			title: title,
+			review: review,
 		}),
 	}).then((res) => res.json());
 };
