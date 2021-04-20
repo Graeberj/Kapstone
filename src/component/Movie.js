@@ -29,9 +29,11 @@ function Movie({ movieOption }, props) {
       <div className="fluid-container sb-show-main d-flex flex-column align-items-center imagecard">
         <div className="row row-cols-1 row-cols-md-3 g-4 mx-5">
           {image.map((image) => (
-            <div className="col">
-              <ImageCard key={image.id} image={image} />
-            </div>
+            <Link to={"movie/" + image.id}>
+              <div className="col">
+                <ImageCard key={image.id} image={image} />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
