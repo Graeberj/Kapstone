@@ -7,21 +7,24 @@ import axios from "../axios";
 
 import ImageCard from "./ImageCard";
 import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
+import MovieDetail from "./MovieDetail";
 
-function Movie({ movieOption }) {
+function Movie({ movieOption }, props) {
   const [image, setImage] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const requests = await axios.get(movieOption);
+      console.log(requests.data.results);
       setImage(requests.data.results);
-      return requests;
+      // return requests;
     }
 
     fetchData();
   }, []);
 
   return (
+    return (
     <div className="movie">
       <BreadcrumbHeader />
       <div className="fluid-container sb-show-main d-flex flex-column align-items-center imagecard">
@@ -36,5 +39,6 @@ function Movie({ movieOption }) {
     </div>
   );
 }
+    
 
 export default Movie;

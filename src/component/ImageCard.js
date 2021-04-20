@@ -4,9 +4,10 @@ import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function ImageCard({ image, setMovieOption }) {
+function ImageCard({ image }) {
   return (
-    <div className="card my-2">
+    
+<div className="card my-2">
       <div className="card">
         <div className="card-body">
           <img
