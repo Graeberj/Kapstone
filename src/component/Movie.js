@@ -24,7 +24,6 @@ function Movie({ movieOption }, props) {
   }, []);
 
   return (
-    return (
     <div className="movie">
       <BreadcrumbHeader />
       <div className="fluid-container sb-show-main d-flex flex-column align-items-center imagecard">
@@ -39,6 +38,5 @@ function Movie({ movieOption }, props) {
     </div>
   );
 }
-    
 
 export default Movie;
