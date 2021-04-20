@@ -24,7 +24,7 @@ function ImageCard({ image, setMovieOption }) {
               <p className="card-text">
                 Some quick example text to build on the card title
               </p>
-              <span href="./Favorite" className="btn btn-primary">
+              <span href="/Favorite" className="btn btn-primary">
                 Add to Favorites
               </span>
             </div>
