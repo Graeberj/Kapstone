@@ -7,15 +7,17 @@ import axios from "../axios";
 
 import ImageCard from "./ImageCard";
 import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
+import MovieDetail from "./MovieDetail";
 
-function Movie({ movieOption }) {
+function Movie({ movieOption }, props) {
   const [image, setImage] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const requests = await axios.get(movieOption);
+      console.log(requests.data.results);
       setImage(requests.data.results);
-      return requests;
+      // return requests;
     }
 
     fetchData();
@@ -24,9 +26,12 @@ function Movie({ movieOption }) {
   return (
     <div className="movie">
       <BreadcrumbHeader />
-      {image.map((image) => (
-        <ImageCard key={image.id} image={image} />
-      ))}
+      {image &&
+        image.map((image) => (
+          <Link to={"movie/" + image.id}>
+            <ImageCard key={image.id} image={image} />
+          </Link>
+        ))}
     </div>
   );
 }
