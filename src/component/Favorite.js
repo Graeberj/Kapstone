@@ -10,7 +10,6 @@ function Favorite() {
 	return (
 		<div className='Favelist'>
 			<Favoriteheader />
-			<Favoritepage />
 		</div>
 	);
 }
