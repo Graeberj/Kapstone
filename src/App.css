@@ -1,31 +1,4 @@
-/* .imageCard {
-	color: blue;
-	width: 500px;
-	height: 375px;
-	padding: 20px;
-	transition: transform 100ms;
-}
-
-.imageCard:hover {
-	transform: scale(1.09);
-}
-
-.imageCard > img {
-	height: 265px;
-	object-fit: contain;
-	width: 500px;
-}
-
-.imageCard > h2 {
-	padding-top: 10px;
-}
-
-.movie {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-} */
-
 .sb-show-main {
   background-color: #a9d7f3;
 }
+
