@@ -4,7 +4,7 @@ import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
-function ImageCard({ image, setMovieOption }) {
+function ImageCard({ image }) {
   return (
     <div className="fluid-container sb-show-main d-flex flex-column align-items-center imagecard">
       <div className="row row-cols-1 row-cols-md-3 g-4">

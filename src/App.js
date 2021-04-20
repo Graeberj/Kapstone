@@ -17,9 +17,10 @@ function App() {
       <Switch>
         <Route path="/favorite" component={Favorite} />
         <Route path="/review" component={Review} />
-        <Route path="/movie" component={Movie} />
-        <Movie movieOption={movieOption} />
-        <Route path="/movie/:movieId" component={<MovieDetail />} />
+        <Route exact path="/">
+          <Movie movieOption={movieOption} />
+        </Route>
+        <Route path="/movie/:movieId" component={MovieDetail} />
       </Switch>
     </div>
   );

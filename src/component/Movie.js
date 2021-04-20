@@ -15,8 +15,9 @@ function Movie({ movieOption }, props) {
   useEffect(() => {
     async function fetchData() {
       const requests = await axios.get(movieOption);
+      console.log(requests.data.results);
       setImage(requests.data.results);
-      return requests;
+      // return requests;
     }
 
     fetchData();
