@@ -14,7 +14,7 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  main,
+  //main,
 };
 
 const Template = (args) => <Button {...args} />;
