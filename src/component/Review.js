@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { POSTREVIEW, useStore } from './store/store';
 import { reviewRequest, createMessageRev } from '../request';
 import { Form, Button } from 'react-bootstrap';
-import Favoriteheader from '../stories/Favoriteheader';
+
 import film from '../stories/assets/filmstrip.png';
 
 function Review() {
@@ -13,15 +13,16 @@ function Review() {
 	useEffect(() => {
 		reviewRequest().then((data) => {
 			setNewReview(data.review);
+			console.log(data.review);
 		});
 	}, []);
-	console.log(newReview);
 
 	const handleNewReview = (e) => {
 		e.preventDefault();
 		createMessageRev(post).then((data) => {
 			dispatch({ type: POSTREVIEW, PAYLOAD: data });
-			setNewReview([data.username, ...newReview]);
+			setNewReview([]);
+			console.log(newReview);
 		});
 	};
 
@@ -31,13 +32,13 @@ function Review() {
 
 	return (
 		<div>
-			<Favoriteheader />
 			<Form>
 				<label className='review-form'>
 					<p>Your Review</p>
 
 					<textarea
 						classsName='username'
+						placeholder='username'
 						rows='1'
 						cols='30'
 						type='text'
@@ -45,9 +46,19 @@ function Review() {
 						onChange={handleReview}
 						value={post}
 					/>
-					<textarea classsName='title' rows='1' cols='30' type='text' autoFocus onChange={handleReview} value={post} />
+					<textarea
+						classsName='title'
+						placeholder='title'
+						rows='1'
+						cols='30'
+						type='text'
+						autoFocus
+						onChange={handleReview}
+						value={post}
+					/>
 					<textarea
 						classsName='review'
+						placeholder='review'
 						rows='10'
 						cols='30'
 						type='text'
