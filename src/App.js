@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <Switch>
         <Route path="/favorite" component={Favorite} />
         <Route path="/review" component={Review} />

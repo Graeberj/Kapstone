@@ -14,10 +14,10 @@ export const BreadcrumbsHeader = () => (
             <a href="/">Movies</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="/Favorites">Favorites</a>
+            <a href="/favorite">Favorites</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            <a href="/Reviews">Reviews</a>
+            <a href="/review">Reviews</a>
           </li>
         </ol>
         <div className="input-group input-group-sm">
