@@ -1,3 +1,4 @@
+
 .wrapper {
 	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -22,8 +23,4 @@ h1 {
 	margin: 6px 0 6px 10px;
 	display: inline-block;
 	vertical-align: top;
-}
-
-.sb-show-main {
-	background-color: #a9d7f3;
 }

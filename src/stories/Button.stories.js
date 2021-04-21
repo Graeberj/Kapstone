@@ -8,13 +8,6 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-
-  title: "Example/Button",
-  component: Button,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
-  main,
 };
 
 const Template = (args) => <Button {...args} />;

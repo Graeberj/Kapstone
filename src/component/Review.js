@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { POSTREVIEW, useStore } from './store/store';
 import { reviewRequest, createMessageRev } from '../request';
@@ -26,9 +27,11 @@ function Review() {
 		});
 	};
 
-	const handleReview = (e) => {
-		setPost(e.target.value);
-	};
+
+  const handleReview = (e) => {
+    setPost(e.target.value);
+  };
+
 
 	return (
 		<div>
@@ -73,6 +76,7 @@ function Review() {
 			</Form>
 		</div>
 	);
+
 }
 
 export default Review;
