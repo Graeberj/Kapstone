@@ -1,16 +1,21 @@
-import React from "react";
-import { useState, useEffect } from "react";
 
-import request from "../request";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import request from '../request';
+import Review from 'react';
 
-import axios from "../axios";
 
-import ImageCard from "./ImageCard";
-import BreadcrumbHeader from "../stories/BreadcrumbsHeader";
-import MovieDetail from "./MovieDetail";
+
+import axios from '../axios';
+
+import ImageCard from './ImageCard';
+import BreadcrumbHeader from '../stories/BreadcrumbsHeader';
+import MovieDetail from './MovieDetail';
 
 function Movie({ movieOption }, props) {
-  const [image, setImage] = useState([]);
+	const [image, setImage] = useState([]);
+
 
   useEffect(() => {
     async function fetchData() {
@@ -19,8 +24,10 @@ function Movie({ movieOption }, props) {
       // return requests;
     }
 
-    fetchData();
-  }, []);
+
+		fetchData();
+	}, []);
+
 
   return (
     <div className="movie">
@@ -36,6 +43,7 @@ function Movie({ movieOption }, props) {
       </div>
     </div>
   );
+
 }
 
 export default Movie;
