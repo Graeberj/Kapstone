@@ -32,7 +32,11 @@ const MovieDetail = (props) => {
 				/>
 			</div>
 			<div>{movieDetails.overview}</div>
+<<<<<<< HEAD
 			<Review movieDetails={movieDetails} movieId={props.match.params.movieId} />
+=======
+			<Review />
+>>>>>>> d34a181 (rebasing/merging)
 		</>
 	);
 
