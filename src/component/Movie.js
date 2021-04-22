@@ -31,7 +31,7 @@ function Movie({ movieOption }, props) {
         <Input />
         <div className="row row-cols-1 row-cols-md-3 g-4 mx-5">
           {image.map((image) => (
-            <div className="col">
+            <div className="col" key={image.id}>
               <ImageCard key={image.id} image={image} />
             </div>
           ))}

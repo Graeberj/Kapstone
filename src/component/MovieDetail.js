@@ -13,6 +13,7 @@ const MovieDetail = (props) => {
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=922f447f35d6ccb6a47a1fced73b5c71&language=en-US`
     )
+      // axios.get(baseURL + 'aslfkdjsljdf', data)
       .then((res) => res.json())
       .then((data) => setMovieDetails(data));
   };

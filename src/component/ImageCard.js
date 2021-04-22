@@ -24,9 +24,7 @@ function ImageCard({ image }) {
           <span className="card-title">
             {image.title || image.original_name}
           </span>
-          <p className="card-text">
-            Some quick example text to build on the card title
-          </p>
+          <p className="card-text">{image.tagline}</p>
         </Link>
         <span onClick={handleAddFavClick} className="btn btn-primary">
           Add to Favorites
