@@ -5,72 +5,103 @@ import { Form, Button } from 'react-bootstrap';
 
 import film from '../stories/assets/filmstrip.png';
 
-function Review() {
+function Review({ movieId }) {
 	const dispatch = useStore((state) => state.dispatch);
-	const [post, setPost] = useState('');
-	const [newReview, setNewReview] = useState([]);
+	const [newReview, setNewReview] = useState({
+		username: '',
+		title: '',
+		review: '',
+	});
+	const [review, setReview] = useState([]);
 
 	useEffect(() => {
-		reviewRequest().then((data) => {
-			setNewReview(data.review);
-			console.log(data.review);
+		createMessageRev().then((data) => {
+			setNewReview(data.reviews);
+			console.log(data.reviews);
 		});
 	}, []);
 
+	useEffect(() => {
+		reviewRequest().then((data) => setReview(data));
+	}, [newReview]);
+
 	const handleNewReview = (e) => {
 		e.preventDefault();
-		createMessageRev(post).then((data) => {
+		createMessageRev(newReview.username, newReview.title, newReview.review, movieId).then((data) => {
 			dispatch({ type: POSTREVIEW, PAYLOAD: data });
-			setNewReview([]);
-			console.log(newReview);
+		});
+		setNewReview({
+			username: '',
+			title: '',
+			review: '',
 		});
 	};
+	console.log(newReview);
 
 	const handleReview = (e) => {
-		setPost(e.target.value);
+		e.preventDefault();
+		setNewReview({
+			...newReview,
+			[e.target.name]: e.target.value,
+		});
 	};
 
 	return (
 		<div>
-			<Form>
-				<label className='review-form'>
-					<p>Your Review</p>
+			{movieId ? (
+				<Form>
+					<label className='review-form'>
+						<p>Your Review</p>
 
-					<textarea
-						classsName='username'
-						placeholder='username'
-						rows='1'
-						cols='30'
-						type='text'
-						autoFocus
-						onChange={handleReview}
-						value={post}
-					/>
-					<textarea
-						classsName='title'
-						placeholder='title'
-						rows='1'
-						cols='30'
-						type='text'
-						autoFocus
-						onChange={handleReview}
-						value={post}
-					/>
-					<textarea
-						classsName='review'
-						placeholder='review'
-						rows='10'
-						cols='30'
-						type='text'
-						autoFocus
-						onChange={handleReview}
-						value={post}
-					/>
-				</label>
-				<Button variant='outline-primary' onSubmit={handleNewReview}>
-					Rate it!
-				</Button>{' '}
-			</Form>
+						<textarea
+							classsName='username'
+							placeholder='username'
+							name='username'
+							rows='1'
+							cols='10'
+							type='text'
+							autoFocus
+							onChange={(e) => handleReview(e)}
+							value={newReview.username}
+						/>
+						<textarea
+							classsName='title'
+							placeholder='title'
+							name='title'
+							rows='1'
+							cols='10'
+							type='text'
+							disabled
+							value={newReview.title}
+							// this should be disabled and filled with the title from the image
+						/>
+						<textarea
+							classsName='review'
+							placeholder='review'
+							name='review'
+							rows='10'
+							cols='30'
+							type='text'
+							autoFocus
+							onChange={(e) => handleReview(e)}
+							value={newReview.review}
+						/>
+					</label>
+					<Button variant='outline-primary' onClick={(e) => handleNewReview(e)}>
+						Rate it!
+					</Button>{' '}
+				</Form>
+			) : (
+				<div>
+					{review.map((review) => (
+						<div>
+							<h1>{review.title}</h1>
+							<p>{review.username}</p>
+							<p>{review.review}</p>
+						</div>
+					))}
+				</div>
+			)}
 		</div>
 	);
 }

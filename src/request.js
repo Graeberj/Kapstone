@@ -9,21 +9,24 @@ export default {
 };
 
 // need backend URL to add to fech request
+const baseURL = 'http://localhost:3000/:movieId/reviews/create';
 
-export const createMessageRev = (username, title, review) => {
+export const createMessageRev = (username, title, review, movieId) => {
 	return fetch({
+		baseURL,
 		method: 'PUT',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			username: username,
-			title: title,
-			review: review,
+			username,
+			title,
+			review,
+			movieId,
 		}),
 	}).then((res) => res.json());
 };
 
 export const reviewRequest = () => {
-	return fetch('message', {}).then((res) => res.json());
+	return fetch('http://localhost:3000/reviews/').then((res) => res.json());
 };

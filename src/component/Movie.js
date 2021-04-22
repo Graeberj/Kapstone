@@ -31,6 +31,7 @@ function Movie({ movieOption }, props) {
 					{image.map((image) => (
 						<div className='col'>
 							<ImageCard key={image.id} image={image} />
+							{/* <Review key={image.id} image={image} /> */}
 						</div>
 					))}
 				</div>

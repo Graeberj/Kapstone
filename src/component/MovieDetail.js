@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Favoriteheader from '../stories/Favoriteheader';
-
-import { fetchMovieDetails } from '../request';
 import Review from './Review';
 
 const MovieDetail = (props) => {
@@ -28,7 +26,7 @@ const MovieDetail = (props) => {
 				/>
 			</div>
 			<div>{movieDetails.overview}</div>
-			<Review />
+			<Review movieDetails={movieDetails} movieId={props.match.params.movieId} />
 		</>
 	);
 };
