@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Favoriteheader from "../stories/Favoriteheader";
-import BreadcrumbsHeader from "../stories/BreadcrumbsHeader";
 
-import { fetchMovieDetails } from "../request";
-import Review from "./Review";
+import React, { useEffect, useState } from 'react';
+import Favoriteheader from '../stories/Favoriteheader';
+import Review from './Review';
+
 
 const MovieDetail = (props) => {
   const [movieDetails, setMovieDetails] = useState({});
@@ -21,22 +20,22 @@ const MovieDetail = (props) => {
     movieData();
   }, []);
 
-  return (
-    <>
-      <Favoriteheader />
-      <div className="movieDetail">
-        <h1>{movieDetails.original_title}</h1>
-        <img
-          src={`https://image.tmdb.org/t/p/original/${
-            movieDetails.backdrop_path || movieDetails.poster_path
-          }`}
-          alt={MovieDetail.original_title}
-        />
-      </div>
-      <div>{movieDetails.overview}</div>
-      <Review />
-    </>
-  );
+
+	return (
+		<>
+			<Favoriteheader />
+			<div className='movieDetail'>
+				<h1>{movieDetails.original_title}</h1>
+				<img
+					src={`https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path || movieDetails.poster_path}`}
+					alt={MovieDetail.original_title}
+				/>
+			</div>
+			<div>{movieDetails.overview}</div>
+			<Review movieDetails={movieDetails} movieId={props.match.params.movieId} />
+		</>
+	);
+
 };
 
 export default MovieDetail;
