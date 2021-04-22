@@ -7,9 +7,19 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 function ImageCard({ image }) {
   const handleAddFavClick = () => {
-    console.log("Add to fav by Movie Id: " + image.id);
+    addFave(image.id);
   };
-
+  const addFave = (faveId) => {
+    return fetch("http://localhost:3000/" + faveId + "/favorite", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        movieId: faveId,
+      }),
+    }).then((res) => res.json());
+  };
   return (
     <div className="card my-2">
       <div className="card">
