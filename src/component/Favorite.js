@@ -13,10 +13,6 @@ function Favorite() {
     fetch("http://localhost:3000/favorites")
       .then((res) => res.json())
       .then((data) => setFave(data));
-    // .then(fave.map((favorite) => movieData(favorite)));
-
-    // .then((newRes) => newRes.json())
-    // .then((data) => setFaveDetail((faveDetail) => [...faveDetail, data]));
   };
 
   const movieData = (movieId) => {
@@ -38,6 +34,7 @@ function Favorite() {
   return (
     <div className="movie">
       <BreadcrumbHeader />
+      <Favoriteheader />
       <div className="fluid-container sb-show-main d-flex flex-column align-items-center imagecard">
         <div className="row row-cols-1 row-cols-md-3 g-4 mx-5">
           {faveDetail &&

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import axios from "../axios";
+import Favoriteheader from "../stories/Favoriteheader";
+import BreadcrumbsHeader from "../stories/BreadcrumbsHeader";
+
 import { fetchMovieDetails } from "../request";
+import Review from "./Review";
 
 const MovieDetail = (props) => {
   const [movieDetails, setMovieDetails] = useState({});
@@ -20,13 +23,18 @@ const MovieDetail = (props) => {
 
   return (
     <>
-      <h1>{movieDetails.original_title}</h1>
-      <img
-        src={`https://image.tmdb.org/t/p/original/${
-          movieDetails.backdrop_path || movieDetails.poster_path
-        }`}
-      />
+      <Favoriteheader />
+      <div className="movieDetail">
+        <h1>{movieDetails.original_title}</h1>
+        <img
+          src={`https://image.tmdb.org/t/p/original/${
+            movieDetails.backdrop_path || movieDetails.poster_path
+          }`}
+          alt={MovieDetail.original_title}
+        />
+      </div>
       <div>{movieDetails.overview}</div>
+      <Review />
     </>
   );
 };
