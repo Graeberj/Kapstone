@@ -5,14 +5,14 @@ import Review from './Review';
 
 
 const MovieDetail = (props) => {
-  const [movieDetails, setMovieDetails] = useState({});
+	const [movieDetails, setMovieDetails] = useState({});
+
 
   const movieData = () => {
     const movieId = props.match.params.movieId;
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=922f447f35d6ccb6a47a1fced73b5c71&language=en-US`
     )
-      // axios.get(baseURL + 'aslfkdjsljdf', data)
       .then((res) => res.json())
       .then((data) => setMovieDetails(data));
   };
@@ -36,6 +36,9 @@ const MovieDetail = (props) => {
 		</>
 	);
 
-};
 
-export default MovieDetail;
+	const movieData = () => {
+		const movieId = props.match.params.movieId;
+		fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=922f447f35d6ccb6a47a1fced73b5c71&language=en-US`)
+			.then((res) => res.json())
+			.then((data) => setMovieDetails(data));
