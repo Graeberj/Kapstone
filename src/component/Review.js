@@ -3,9 +3,10 @@ import { POSTREVIEW, useStore } from "./store/store";
 import { reviewRequest, createMessageRev } from "../request";
 import { Form, Button } from "react-bootstrap";
 
-import film from "../stories/assets/filmstrip.png";
+import film from "../stories/assets/review_film1.png";
 import BreadcrumbsHeader from "../stories/BreadcrumbsHeader";
 import FavoriteHeader from "../stories/Favoriteheader";
+import FavoritePage from "../stories/Favoritepage";
 
 function Review() {
   const dispatch = useStore((state) => state.dispatch);
@@ -36,7 +37,7 @@ function Review() {
     <div>
       <div className="sb-show-main">
         <BreadcrumbsHeader />
-        <FavoriteHeader />
+
         <Form>
           <label className="review-form">
             <p>Your Review</p>
