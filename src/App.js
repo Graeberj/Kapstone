@@ -9,6 +9,7 @@ import Favorite from './component/Favorite';
 import MovieDetail from './component/MovieDetail';
 
 function App() {
+
 	const [movieOption, setMovieOption] = useState(request.fetchDiscovery);
 	return (
 		<div className='App'>
@@ -24,6 +25,7 @@ function App() {
 			</Switch>
 		</div>
 	);
+
 }
 
 export default App;

@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function ImageCard({ image }) {
+  const handleAddFavClick = () => {
+    console.log("Add to fav by Movie Id: " + image.id);
+  };
+
   return (
     <div className="card my-2">
       <div className="card">
@@ -20,11 +24,9 @@ function ImageCard({ image }) {
           <span className="card-title">
             {image.title || image.original_name}
           </span>
-          <p className="card-text">
-            Some quick example text to build on the card title
-          </p>
+          <p className="card-text">{image.tagline}</p>
         </Link>
-        <span href="./Favorite" className="btn btn-primary">
+        <span onClick={handleAddFavClick} className="btn btn-primary">
           Add to Favorites
         </span>
       </div>

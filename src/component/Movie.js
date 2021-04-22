@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -38,6 +39,7 @@ function Movie({ movieOption }, props) {
 			</div>
 		</div>
 	);
+
 }
 
 export default Movie;
