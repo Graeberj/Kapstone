@@ -25,6 +25,7 @@ function Favorite() {
 
   useEffect(() => {
     favoriteList();
+    console.log(fave);
   }, []);
 
   useEffect(() => {
