@@ -15,10 +15,9 @@ function ImageCard({ image }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        movieId: faveId,
-      }),
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div className="card my-2">
@@ -36,7 +35,10 @@ function ImageCard({ image }) {
           </span>
           <p className="card-text">{image.tagline}</p>
         </Link>
-        <span onClick={handleAddFavClick} className="btn btn-primary">
+        <span
+          onClick={(e) => handleAddFavClick(image.id)}
+          className="btn btn-primary"
+        >
           Add to Favorites
         </span>
       </div>
