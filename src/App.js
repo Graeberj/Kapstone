@@ -9,7 +9,6 @@ import Favorite from './component/Favorite';
 import MovieDetail from './component/MovieDetail';
 
 function App() {
-
 	const [movieOption, setMovieOption] = useState(request.fetchDiscovery);
 	return (
 		<div className='App'>
@@ -17,7 +16,7 @@ function App() {
 
 			<Switch>
 				<Route path='/favorite' component={Favorite} />
-				<Route path='/Reviews' component={Review} />
+				<Route path='/review' component={Review} />
 				<Route exact path='/'>
 					<Movie movieOption={movieOption} />
 				</Route>
@@ -25,7 +24,6 @@ function App() {
 			</Switch>
 		</div>
 	);
-
 }
 
 export default App;

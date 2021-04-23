@@ -2,3 +2,15 @@
 	background-color: #a9d7f3;
 	margin-bottom: 0px;
 }
+
+.movieDetail {
+	height: 700px;
+	width: 200px;
+	object-fit: contain;
+}
+
+.image {
+	height: 200;
+	width: 100;
+	background-size: contain;
+}
